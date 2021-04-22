@@ -27,7 +27,22 @@
   3. Na pasta `Test Cases`, se encontra casos de testes disponiveis
   4. Clique no botão `Executar` no canto superior direito do teste desejado
 
+<a id="como-contribuir"></a>
+## :recycle: Como contribuir
 
+- Efetue um clone do repositrio 
+- Crie uma branch com a sua feature: `git checkout -b my-feature`
+- Commit suas mudanças: `git commit -m 'feat: My new feature'`
+- Push a sua branch: `git push origin my-feature`
+- No GitHub, Abra um pull request para a branch `main` e aguarde aprovação
+
+## :memo: License
+
+Esse projeto está sob a [LICENSE MIT](LICENSE).
+
+<h4 align="center">
+    Feito com 💜 by <a href="https://www.linkedin.com/in/helenminin/" target="_blank">Hélen Minin</a>
+</h4>
 
 ## Autenticação
   Para autenticar no trello, precisa da chave e do token, que podem ser adquiridos pelo [link](https://trello.com/app-key)
