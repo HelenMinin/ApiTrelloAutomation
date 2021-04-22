@@ -1,6 +1,5 @@
 @tag
-Feature: Title of your feature
-  I want to use this template for my feature file
+Feature: Criação de cards
 
   @Criar
   Scenario: O usuário deve criar um card
