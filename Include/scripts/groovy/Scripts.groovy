@@ -48,7 +48,7 @@ class Scripts {
 	public void tenha_um_Board_criado() {
 
 		CustomKeywords.'Criar.CriarBoard'()
-		GlobalVariable.IdList = GlobalVariable.Retorno.get("is")
+		GlobalVariable.IdList = GlobalVariable.Retorno.get("id")
 	}
 
 	@When("Efetue uma requisição POST no endpoint de criação de Card passando a autenticação")
@@ -71,10 +71,11 @@ class Scripts {
 
 	@Given("Possua o card criado")
 	public void possua_o_card_criado() {
-		
+
 		if(GlobalVariable.idCard == ""){
 			KeywordUtil.markFailed("Não possui nenhum card para ser editado")
 		}
+
 		KeywordUtil.markWarning("" + GlobalVariable.idCard)
 	}
 
@@ -101,13 +102,30 @@ class Scripts {
 
 	@When("Efetue uma requisição DELET informando o Card que deseja excluir e sua autenticação")
 	public void efetue_uma_requisição_DELET_informando_o_Card_que_deseja_excluir_e_sua_autenticação() {
-		// Write code here that turns the phrase above into concrete actions
-		//throw new PendingException();
+
+		CustomKeywords.'Excluir.ExcluirCard'()
+		CustomKeywords.'Excluir.ExcluirBoard'()
 	}
 
 	@Then("O card deve ser excluido")
 	public void o_card_deve_ser_excluido() {
-		// Write code here that turns the phrase above into concrete actions
-		//throw new PendingException();
+		
+		CustomKeywords.'Consultar.ConsultarCardInexistente'()
+		if(GlobalVariable.StatusCode == 404){
+			KeywordUtil.markPassed("Card excluido!")
+			return
+		}
+		KeywordUtil.markError("StatusCode: " + GlobalVariable.StatusCode)
+	}
+	
+	@Then("O Board em que o card foi criado tambem deve ser excluido")
+	public void o_Board_em_que_o_card_foi_criado_tambem_deve_ser_excluido() {
+		
+		CustomKeywords.'Consultar.ConsultarBoardInexistente'()
+		if(GlobalVariable.StatusCode == 404){
+			KeywordUtil.markPassed("Board excluido!")
+			return
+		}
+		KeywordUtil.markError("StatusCode: " + GlobalVariable.StatusCode)
 	}
 }

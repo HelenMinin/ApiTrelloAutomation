@@ -12,6 +12,7 @@ import com.kms.katalon.core.model.FailureHandling
 import com.kms.katalon.core.testcase.TestCase
 import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testobject.TestObject
+import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
@@ -26,5 +27,17 @@ public class Consultar {
 
 		GlobalVariable.idCard = GlobalVariable.Retorno.get("shortLink")
 		Requisicao.EfetuarRequisicao("Object Repository/Consultar Card")
+	}
+
+	@Keyword
+	def ConsultarCardInexistente(){
+
+		Requisicao.EfetuarRequisicaoSemRetorno("Object Repository/Consultar Card")
+	}
+	
+	@Keyword
+	def ConsultarBoardInexistente(){
+
+		Requisicao.EfetuarRequisicaoSemRetorno("Object Repository/Consultar Board")
 	}
 }
