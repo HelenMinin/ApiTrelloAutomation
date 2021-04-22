@@ -31,12 +31,12 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'4a7af75b163019e66ed0b5ba035820d5'</initValue>
+      <initValue>''</initValue>
       <name>Key</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'32bb6f6499b4bf546c9681d0fa2af2c127148646e66ceece6aa6bec1743baac7'</initValue>
+      <initValue>''</initValue>
       <name>Token</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>
