@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebServiceRequestEntity>
    <description></description>
-   <name>CriarBord</name>
+   <name>CriarBoard</name>
    <tag></tag>
    <elementGuidId>96dd253e-f617-4907-ada5-87a9bee9bf44</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
