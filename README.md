@@ -1,5 +1,11 @@
-# Índice
+<h3 align="center">
+    <img alt="Logo" title="#logo" width="300px" src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Katalon_Studio_logo.png">
+    <br><br>
+    <b>Automação com Katalon</b>  
+    <br>
+</h3>
 
+# Índice
 - [Sobre](#sobre)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Como Usar](#como-usar)
@@ -7,6 +13,14 @@
 
 <a id="sobre"></a>
 ## :bookmark: Sobre
+O ApiTrelloAutomation tem como objetivo executar processos da ferramenta Trello de forma automática! Nesse projeto é possível:
+### :black_medium_square: Criar um Card: 
+Para efetuar a criação de um card, é necessário possuir um board, com isso, antes do card é gerado um board. Por padrão, um novo board já possui 3 listas iniciais. O card será criado dentro da primeira lista do board!
+### :black_medium_square: Editar um card criado: 
+Para que um card possa ser editado é preciso, primeiramente, possuir um card. Devido a isso, o processo de criação de card se repete antes de sua edição!
+### :black_medium_square: Excluir um card: 
+Novamente, para se excluir um card é preciso que o mesmo já exista. Assim como na edição, um processo é executado antes da exclusão, sendo ele a edição. Ela é executada nesse exemplo para garantir que mesmo que o card seja editado, seja possível efetuar a sua exclusão!
+Falando em exclusão, alem do card, o board também é excluído para que não fique "lixo" no Trello.
 
 <a id="tecnologias-utilizadas"></a>
 ## :rocket: Tecnologias Utilizadas
@@ -23,19 +37,18 @@
       ```sh
         $ git clone https://github.com/HelenMinin/ApiTrelloAutomation.git
       ```
-  2. No Katalon, abra o repositório
-  3. Na pasta `Test Cases`, se encontra casos de testes disponiveis
-  4. Clique no botão `Executar` no canto superior direito do teste desejado
+  2. No Katalon, abra o repositório;
+  3. Na pasta `Profiles`, informe sua [chave de acesso e seu token](https://trello.com/app-key);
+  4. Na pasta `Test Cases` selecione o teste desejado;
+  5. Clique no botão `Executar` no canto superior direito.
 
 <a id="como-contribuir"></a>
 ## :recycle: Como contribuir
 
-- Efetue um clone do repositrio 
+- Faça um Fork desse repositório,
 - Crie uma branch com a sua feature: `git checkout -b my-feature`
 - Commit suas mudanças: `git commit -m 'feat: My new feature'`
 - Push a sua branch: `git push origin my-feature`
-- No GitHub, Abra um pull request para a branch `main` e aguarde aprovação
-
 ## :memo: License
 
 Esse projeto está sob a [LICENSE MIT](LICENSE).
