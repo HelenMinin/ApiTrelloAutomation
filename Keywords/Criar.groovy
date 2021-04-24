@@ -12,6 +12,7 @@ import com.kms.katalon.core.model.FailureHandling
 import com.kms.katalon.core.testcase.TestCase
 import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testobject.TestObject
+import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
@@ -26,16 +27,26 @@ public class Criar {
 
 		Requisicao.EfetuarRequisicao("Object Repository/Consultar Listas Board")
 
-		GlobalVariable.IdList = GlobalVariable.Retorno[0].get("id")
+		if(GlobalVariable.StatusCode != 200){
+			
+			return
+		}
 
+		GlobalVariable.IdList = GlobalVariable.Retorno[0].get("id")
 		Requisicao.EfetuarRequisicao("Object Repository/CriarCard")
 	}
 
 	@Keyword
 	public void CriarBoard(){
 
-		Requisicao.EfetuarRequisicao("Object Repository/CriarBord")
+		Requisicao.EfetuarRequisicao("Object Repository/CriarBoard")
 
 		GlobalVariable.IdBoard = GlobalVariable.Retorno.get("id")
+	}
+
+	@Keyword
+	public void CriarCardSemAutenticacao(){
+
+		Requisicao.EfetuarRequisicao("Object Repository/CriarCard")
 	}
 }

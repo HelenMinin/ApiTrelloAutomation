@@ -16,6 +16,7 @@ import com.kms.katalon.core.testobject.ObjectRepository
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.sun.jna.platform.KeyboardUtils
 
 import internal.GlobalVariable
 
@@ -42,8 +43,8 @@ import cucumber.api.java.en.Then
 import cucumber.api.java.en.When
 
 
-
 class Scripts {
+
 	@Given("Tenha um Board criado com listas")
 	public void tenha_um_Board_criado() {
 
@@ -109,7 +110,7 @@ class Scripts {
 
 	@Then("O card deve ser excluido")
 	public void o_card_deve_ser_excluido() {
-		
+
 		CustomKeywords.'Consultar.ConsultarCardInexistente'()
 		if(GlobalVariable.StatusCode == 404){
 			KeywordUtil.markPassed("Card excluido!")
@@ -117,15 +118,57 @@ class Scripts {
 		}
 		KeywordUtil.markError("StatusCode: " + GlobalVariable.StatusCode)
 	}
-	
+
 	@Then("O Board em que o card foi criado tambem deve ser excluido")
 	public void o_Board_em_que_o_card_foi_criado_tambem_deve_ser_excluido() {
-		
+
 		CustomKeywords.'Consultar.ConsultarBoardInexistente'()
+
 		if(GlobalVariable.StatusCode == 404){
 			KeywordUtil.markPassed("Board excluido!")
 			return
 		}
 		KeywordUtil.markError("StatusCode: " + GlobalVariable.StatusCode)
+	}
+
+	@Given("Não possua um board criado")
+	public void não_possua_um_board_criado() {
+
+		def listaInvalida = "6081fae8bd1b7c12ec69ba05"
+		GlobalVariable.IdList = listaInvalida
+	}
+
+	@When("Efetue uma requisição POST no endpoint de criação de Card passando a autenticação e o nome do card")
+	public void efetue_uma_requisição_POST_no_endpoint_de_criação_de_Card_passando_a_autenticação_e_o_nome_do_card() {
+
+		CustomKeywords.'Criar.CriarCard'()
+	}
+
+	@Then("Deve retornar o Status Code {int}")
+	public void deve_retornar_o_Status_Code(int statusCode) {
+
+		if(GlobalVariable.StatusCode != statusCode){
+
+			KeywordUtil.markFailed("Status code esperado: " + statusCode + " Status code retornado: " + GlobalVariable.StatusCode)
+		}
+	}
+
+	@Given("Não possua uma autenticação valida")
+	public void não_possua_uma_autenticação_valida() {
+
+		def tokenInvalido = "9eb76d9a9d02b8dd40c2f3e5df18556c831d4d1fadbe2c45f8310e6c93b5c548"
+		def keyInvalida = "0471642aefef5fa1fa76530ce1ba4c85"
+
+		GlobalVariable.Token = tokenInvalido
+		GlobalVariable.Key = keyInvalida
+	}
+
+	@When("Efetue uma requisição POST no endpoint de criação de Card passando a autenticação invalida")
+	public void efetue_uma_requisição_POST_no_endpoint_de_criação_de_Card_passando_a_autenticação_invalida() {
+		
+		def listaInvalida = "6081fae8bd1b7c12ec69ba05"
+		
+		GlobalVariable.IdList = listaInvalida
+		CustomKeywords.'Criar.CriarCardSemAutenticacao'()
 	}
 }

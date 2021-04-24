@@ -34,7 +34,7 @@ public class Consultar {
 
 		Requisicao.EfetuarRequisicaoSemRetorno("Object Repository/Consultar Card")
 	}
-	
+
 	@Keyword
 	def ConsultarBoardInexistente(){
 

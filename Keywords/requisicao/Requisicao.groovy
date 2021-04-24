@@ -6,6 +6,8 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
+import org.junit.After
+
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
@@ -27,10 +29,16 @@ public class Requisicao {
 
 		def requisicao = WS.sendRequest(findTestObject(endpoint))
 		def xml = requisicao.getResponseText().split(" ")
+		KeywordUtil.markWarning("" + xml)
 
 		int codretorno = requisicao.getStatusCode()
 		GlobalVariable.StatusCode = codretorno
-
+		
+		if(codretorno != 200){
+			GlobalVariable.Retorno = xml
+			return
+		}
+		
 		def retorno = requisicao.getResponseText()
 
 		JsonSlurper slurper = new JsonSlurper()
