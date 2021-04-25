@@ -173,25 +173,39 @@ class Scripts {
 	}
 	@Given("Possua o ID da organização")
 	public void possua_o_ID_da_organozação() {
-		
-		GlobalVariable.idOrganizacao  = "60808868912ec3380115eaf5"	
+
+		GlobalVariable.idOrganizacao  = "60808868912ec3380115eaf5"
 	}
-	
+
 	@When("Efetue uma requisição DELETE informando a organização que deseja excluir os card")
 	public void efetue_uma_requisição_DELETE_informando_a_organização_que_deseja_excluir_os_card() {
 
-		CustomKeywords.'Consultar.ConsultarTodosBoardOrganizacao'()	
+		CustomKeywords.'Consultar.ConsultarTodosBoardOrganizacao'()
 		CustomKeywords.'Excluir.ExcluirTodosBoard'()
-
 	}
-	
+
 	@Then("Todos os board da organização deve ser excluido")
 	public void todos_os_board_deve_ser_excluido() {
-		
+
 		CustomKeywords.'Consultar.ConsultarTodosBoardOrganizacao'()
-		
+
 		if (GlobalVariable.Retorno.toString() != "[]"){
 			KeywordUtil.markError("Organização não esta vazia!")
 		}
+	}
+	
+	@Given("Não possua um card criado")
+	public void não_possua_um_card_criado() {
+		
+		def cardInexistente = "NuNurS4S"
+		GlobalVariable.idCard = cardInexistente
+	}
+	
+	@When("Efetue uma requisição PUT com as auterações e sua autenticação invalida")
+	public void efetue_uma_requisição_PUT_com_as_auterações_e_sua_autenticação_invalida() {
+		
+		def cardInexistente = "NuNurS4S"
+		GlobalVariable.idCard = cardInexistente
+		CustomKeywords.'Editar.EditarCard'()
 	}
 }

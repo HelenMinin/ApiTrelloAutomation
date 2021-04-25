@@ -32,15 +32,15 @@ public class Consultar {
 	@Keyword
 	def ConsultarCardInexistente(){
 
-		Requisicao.EfetuarRequisicaoSemRetorno("Object Repository/Consultar Card")
+		Requisicao.EfetuarRequisicao("Object Repository/Consultar Card")
 	}
 
 	@Keyword
 	def ConsultarBoardInexistente(){
 
-		Requisicao.EfetuarRequisicaoSemRetorno("Object Repository/Consultar Board")
+		Requisicao.EfetuarRequisicao("Object Repository/Consultar Board")
 	}
-	
+
 	@Keyword
 	def ConsultarTodosBoardOrganizacao(){
 

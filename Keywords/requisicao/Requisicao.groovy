@@ -47,13 +47,4 @@ public class Requisicao {
 
 		GlobalVariable.Retorno =  parsedJson;
 	}
-
-	public static void EfetuarRequisicaoSemRetorno(String endpoint){
-
-		def requisicao = WS.sendRequest(findTestObject(endpoint))
-		def xml = requisicao.getResponseText().split(" ")
-
-		int codretorno = requisicao.getStatusCode()
-		GlobalVariable.StatusCode = codretorno
-	}
 }
