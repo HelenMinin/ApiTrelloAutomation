@@ -39,4 +39,9 @@
       <initValue>'32bb6f6499b4bf546c9681d0fa2af2c127148646e66ceece6aa6bec1743baac7'</initValue>
       <name>Token</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>idOrganizacao</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

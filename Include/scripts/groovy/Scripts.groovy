@@ -165,10 +165,33 @@ class Scripts {
 
 	@When("Efetue uma requisição POST no endpoint de criação de Card passando a autenticação invalida")
 	public void efetue_uma_requisição_POST_no_endpoint_de_criação_de_Card_passando_a_autenticação_invalida() {
-		
+
 		def listaInvalida = "6081fae8bd1b7c12ec69ba05"
-		
+
 		GlobalVariable.IdList = listaInvalida
 		CustomKeywords.'Criar.CriarCardSemAutenticacao'()
+	}
+	@Given("Possua o ID da organização")
+	public void possua_o_ID_da_organozação() {
+		
+		GlobalVariable.idOrganizacao  = "60808868912ec3380115eaf5"	
+	}
+	
+	@When("Efetue uma requisição DELETE informando a organização que deseja excluir os card")
+	public void efetue_uma_requisição_DELETE_informando_a_organização_que_deseja_excluir_os_card() {
+
+		CustomKeywords.'Consultar.ConsultarTodosBoardOrganizacao'()	
+		CustomKeywords.'Excluir.ExcluirTodosBoard'()
+
+	}
+	
+	@Then("Todos os board da organização deve ser excluido")
+	public void todos_os_board_deve_ser_excluido() {
+		
+		CustomKeywords.'Consultar.ConsultarTodosBoardOrganizacao'()
+		
+		if (GlobalVariable.Retorno.toString() != "[]"){
+			KeywordUtil.markError("Organização não esta vazia!")
+		}
 	}
 }

@@ -40,4 +40,10 @@ public class Consultar {
 
 		Requisicao.EfetuarRequisicaoSemRetorno("Object Repository/Consultar Board")
 	}
+	
+	@Keyword
+	def ConsultarTodosBoardOrganizacao(){
+
+		Requisicao.EfetuarRequisicao("Object Repository/Consultar Board Da Organização")
+	}
 }

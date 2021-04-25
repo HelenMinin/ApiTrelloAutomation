@@ -25,7 +25,7 @@
    <socketTimeout>-1</socketTimeout>
    <useServiceInfoFromWsdl>true</useServiceInfoFromWsdl>
    <variables>
-      <defaultValue>'60808868912ec3380115eaf5'</defaultValue>
+      <defaultValue>GlobalVariable.idOrganizacao</defaultValue>
       <description></description>
       <id>455256f1-5c35-4160-9f92-cdc26ee48b4e</id>
       <masked>false</masked>

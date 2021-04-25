@@ -33,12 +33,12 @@ public class Requisicao {
 
 		int codretorno = requisicao.getStatusCode()
 		GlobalVariable.StatusCode = codretorno
-		
+
 		if(codretorno != 200){
 			GlobalVariable.Retorno = xml
 			return
 		}
-		
+
 		def retorno = requisicao.getResponseText()
 
 		JsonSlurper slurper = new JsonSlurper()
