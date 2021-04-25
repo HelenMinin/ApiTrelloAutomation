@@ -48,6 +48,7 @@ class Scripts {
 	@Given("Tenha um Board criado com listas")
 	public void tenha_um_Board_criado() {
 
+		LimparVariaveisGlobal()
 		CustomKeywords.'Criar.CriarBoard'()
 		GlobalVariable.IdList = GlobalVariable.Retorno.get("id")
 	}
@@ -101,7 +102,7 @@ class Scripts {
 		KeywordUtil.markWarning("" + GlobalVariable.Retorno.get("name"))
 	}
 
-	@When("Efetue uma requisição DELET informando o Card que deseja excluir e sua autenticação")
+	@When("Efetue uma requisição DELETE informando o Card que deseja excluir e sua autenticação")
 	public void efetue_uma_requisição_DELET_informando_o_Card_que_deseja_excluir_e_sua_autenticação() {
 
 		CustomKeywords.'Excluir.ExcluirCard'()
@@ -134,6 +135,7 @@ class Scripts {
 	@Given("Não possua um board criado")
 	public void não_possua_um_board_criado() {
 
+		LimparVariaveisGlobal()
 		def listaInvalida = "6081fae8bd1b7c12ec69ba05"
 		GlobalVariable.IdList = listaInvalida
 	}
@@ -156,6 +158,7 @@ class Scripts {
 	@Given("Não possua uma autenticação valida")
 	public void não_possua_uma_autenticação_valida() {
 
+		LimparVariaveisGlobal()
 		def tokenInvalido = "9eb76d9a9d02b8dd40c2f3e5df18556c831d4d1fadbe2c45f8310e6c93b5c548"
 		def keyInvalida = "0471642aefef5fa1fa76530ce1ba4c85"
 
@@ -174,6 +177,7 @@ class Scripts {
 	@Given("Possua o ID da organização")
 	public void possua_o_ID_da_organozação() {
 
+		LimparVariaveisGlobal()
 		GlobalVariable.idOrganizacao  = "60808868912ec3380115eaf5"
 	}
 
@@ -193,19 +197,45 @@ class Scripts {
 			KeywordUtil.markError("Organização não esta vazia!")
 		}
 	}
-	
+
 	@Given("Não possua um card criado")
 	public void não_possua_um_card_criado() {
-		
+		LimparVariaveisGlobal()
 		def cardInexistente = "NuNurS4S"
 		GlobalVariable.idCard = cardInexistente
 	}
-	
+
 	@When("Efetue uma requisição PUT com as auterações e sua autenticação invalida")
 	public void efetue_uma_requisição_PUT_com_as_auterações_e_sua_autenticação_invalida() {
-		
+
 		def cardInexistente = "NuNurS4S"
 		GlobalVariable.idCard = cardInexistente
 		CustomKeywords.'Editar.EditarCard'()
+	}
+
+	@When("Efetue uma requisição DELETE informando o Card que deseja excluir e sua autenticação invalida")
+	public void efetue_uma_requisição_DELETE_informando_o_Card_que_deseja_excluir_e_sua_autenticação_invalida() {
+
+		def cardInexistente = "NuNurS4S"
+		def boardInvalido = "VLrjA7Ez"
+		GlobalVariable.IdBoard = boardInvalido
+		GlobalVariable.idCard = cardInexistente
+
+		CustomKeywords.'Excluir.ExcluirCard'()
+		CustomKeywords.'Excluir.ExcluirBoard'()
+	}
+
+	private void LimparVariaveisGlobal(){
+
+		String variavelLimpa = ""
+
+		GlobalVariable.IdBoard = variavelLimpa
+		GlobalVariable.idCard = variavelLimpa
+		GlobalVariable.IdList = variavelLimpa
+		GlobalVariable.Retorno = variavelLimpa
+		GlobalVariable.StatusCode = variavelLimpa
+		GlobalVariable.idOrganizacao = variavelLimpa
+		GlobalVariable.Token = ""
+		GlobalVariable.Key = ""
 	}
 }

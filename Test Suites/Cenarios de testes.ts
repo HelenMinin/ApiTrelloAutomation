@@ -12,51 +12,63 @@
    <rerunImmediately>false</rerunImmediately>
    <testSuiteGuid>489f2d67-c7cc-44a7-94ca-58f8561185cd</testSuiteGuid>
    <testCaseLink>
-      <guid>127ced85-077a-4330-b15d-b0b6cbcd6150</guid>
+      <guid>776ac364-161f-46eb-9f0c-b372fd899917</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Criar Card Sem Autenticação</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>bd8634bd-35df-45e1-a428-b66c62b3c231</guid>
+      <guid>052d3ac7-e333-4572-aceb-91cbf46b1a6f</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Criar Card Sem Board</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>f991aac4-9b3b-4d10-b5db-34ba1e09782c</guid>
+      <guid>6d8cf51c-d6b5-443c-bfca-861911186f77</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Criar Card</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>03e6c9b4-d165-4a46-903b-da4c6aefe6f8</guid>
+      <guid>63cacab3-fedf-4aa0-af1d-4b587a3379fe</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Editar Card Que Não Existe</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>c3497c27-57eb-4f45-ade3-75dc26e62af7</guid>
+      <guid>324a4052-1e3b-4745-9186-3046fbcea4be</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Editar Card Sem Autorização</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>a276b76e-757c-4459-b5be-eb64b061baa5</guid>
+      <guid>d41bb6cd-3222-4f8e-bed4-6bcf56037134</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Editar Card</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>ba749ffb-9104-40ab-ab67-2a2b0620bc8e</guid>
+      <guid>598368ea-a91e-4cf1-b3a8-c65101afe100</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Excluir Card Que Não Existe</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>6dd02f32-6a69-47f9-bf6c-7a5aa7e3f03d</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Excluir Card Sem Autorização</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>2d799dad-bfa7-44d3-a08c-1192031565b0</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Excluir Card</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>3d8cd982-80a1-4064-8d08-5e866bc4fa8b</guid>
+      <guid>b1269019-38fb-4092-9790-fadbc3966a50</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Excluir Todos Board Da Organização</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>
