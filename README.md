@@ -56,19 +56,3 @@ Esse projeto está sob a [LICENSE MIT](LICENSE).
 <h4 align="center">
     Feito com 💜 by <a href="https://www.linkedin.com/in/helenminin/" target="_blank">Hélen Minin</a>
 </h4>
-
-## Autenticação
-  Para autenticar no trello, precisa da chave e do token, que podem ser adquiridos pelo [link](https://trello.com/app-key)
-
-## Criação de card
-Para criar um card é preciso efetuar uam requisição POST
-```
-https://api.trello.com/1/cards?key={Key}&token={Token}&idList={Id da lista}
-```
-Para conseguir o ID de uma lista, eu consultei um card que pertencia a lista na qual eu queria inserir o novo card, com isso, no campo "idList" do Json de retorno eu consegui a informação que eu desejava
-
-## Editar card
-Uma vez que o Card é criado, no JSOON de retorno da ciação, o campo "shortLink" eu encontro o ID do card que eu acabei de criar, com ele eu posso efetuar a edição que eu desejo atravez da requisição PUT
-```
-https://api.trello.com/1/cards/{id}?key={Key}&token={Token}
-```
