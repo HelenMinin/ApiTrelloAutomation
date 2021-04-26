@@ -22,6 +22,8 @@ Para que um card possa ser editado é preciso, primeiramente, possuir um card. D
 Novamente, para se excluir um card é preciso que o mesmo já exista. Assim como na edição, um processo é executado antes da exclusão, sendo ele a edição. Ela é executada nesse exemplo para garantir que mesmo que o card seja editado, seja possível efetuar a sua exclusão!
 Falando em exclusão, alem do card, o board também é excluído para que não fique "lixo" no Trello.
 
+Além dos 'casos felizes', também é possivel validar cenarios de falha!
+
 <a id="tecnologias-utilizadas"></a>
 ## :rocket: Tecnologias Utilizadas
 * [Katalon v7.7.2](https://github.com/katalon-studio/katalon-studio/releases/tag/v7.7.2)
@@ -38,9 +40,11 @@ Falando em exclusão, alem do card, o board também é excluído para que não f
         $ git clone https://github.com/HelenMinin/ApiTrelloAutomation.git
       ```
   2. No Katalon, abra o repositório;
-  3. Na pasta `Profiles`, informe sua [chave de acesso e seu token](https://trello.com/app-key);
+  3. Na pasta `Profiles` e no metodo `LimparVariaveisGlobal()` de `Scripts`, informe sua [chave de acesso e seu token](https://trello.com/app-key);
   4. Na pasta `Test Cases` selecione o teste desejado;
   5. Clique no botão `Executar` no canto superior direito.
+* Quer executar todos os testes com um unico clique? tem como também!
+   * Na pasta `Test Suites`, execute o teste `Cenarios de testes`
 
 <a id="como-contribuir"></a>
 ## :recycle: Como contribuir
